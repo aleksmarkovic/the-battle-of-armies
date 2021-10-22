@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 
-import { Army } from 'src/interfaces/army.interface';
-import battle from 'src/common/battle';
+import { Army } from '../interfaces/army.interface';
+import battle from '../common/battle';
 
 @Injectable()
 export class BattleService {

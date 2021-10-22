@@ -1,4 +1,4 @@
-import { pointsCoefficients } from 'src/constants';
+import { pointsCoefficients } from '../constants';
 
 import { Army } from 'src/interfaces/army.interface';
 import { BattleService } from '../battle/battle.service';
@@ -22,7 +22,7 @@ const clashArmies = (armies: Army[], battleService: BattleService) => {
         armyPoints[army.id] * pointsCoefficients[environmentDisaster];
     }
   });
-  console.log(armyPoints);
+
   return {
     army: armies.sort(
       (firstArmy, secondArmy) =>

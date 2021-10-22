@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { BattleService } from './battle.service';
 
-describe('battleService', () => {
+describe('BattleService', () => {
   let service: BattleService;
 
   beforeEach(async () => {
@@ -12,7 +12,24 @@ describe('battleService', () => {
     service = module.get<BattleService>(BattleService);
   });
 
-  it('should be defined', () => {
-    expect(service).toBeDefined();
+  describe('findAll', () => {
+    it('should return object', async () => {
+      const result = [
+        {
+          id: 1,
+          general: false,
+          disease: true,
+          numberOfSoldiers: 50,
+        },
+        {
+          id: 2,
+          general: true,
+          disease: false,
+          numberOfSoldiers: 45,
+        },
+      ];
+
+      jest.spyOn(service, 'findAll').mockImplementation(() => result);
+    });
   });
 });
