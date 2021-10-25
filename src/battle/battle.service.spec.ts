@@ -17,14 +17,14 @@ describe('BattleService', () => {
       const result = [
         {
           id: 1,
-          general: false,
-          disease: true,
+          hasGeneral: false,
+          hasDisease: true,
           numberOfSoldiers: 50,
         },
         {
           id: 2,
-          general: true,
-          disease: false,
+          hasGeneral: true,
+          hasDisease: false,
           numberOfSoldiers: 45,
         },
       ];

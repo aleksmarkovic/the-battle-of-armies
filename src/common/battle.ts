@@ -10,11 +10,11 @@ const clashArmies = (armies: Army[], battleService: BattleService) => {
   Object.values(armies).forEach((army) => {
     armyPoints[army.id] = army.numberOfSoldiers * pointsCoefficients.soldier;
 
-    armyPoints[army.id] += army?.general
-      ? armyPoints[army.id] * pointsCoefficients.general
+    armyPoints[army.id] += army?.hasGeneral
+      ? armyPoints[army.id] * pointsCoefficients.hasGeneral
       : armyPoints[army.id];
-    armyPoints[army.id] = army?.disease
-      ? armyPoints[army.id] * pointsCoefficients.disease
+    armyPoints[army.id] = army?.hasDisease
+      ? armyPoints[army.id] * pointsCoefficients.hasDisease
       : armyPoints[army.id];
 
     if (environmentDisaster) {

@@ -23,8 +23,8 @@ export class ArmyBonusMiddleware implements NestMiddleware {
     Object.values(req.query).forEach((numberOfSoldiers: string) => {
       req.body.armies.push({
         ...(Math.random() < randomProbabilities.ARMY
-          ? { general: true, disease: false }
-          : { general: false, disease: true }),
+          ? { hasGeneral: true, hasDisease: false }
+          : { hasGeneral: false, hasDisease: true }),
         numberOfSoldiers: Number(numberOfSoldiers),
       });
     });

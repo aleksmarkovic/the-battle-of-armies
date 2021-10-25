@@ -19,16 +19,16 @@ describe('BattleController', () => {
       expect(
         await controller.create({
           armies: [
-            { general: false, disease: true, numberOfSoldiers: 50 },
-            { general: true, disease: false, numberOfSoldiers: 45 },
+            { hasGeneral: false, hasDisease: true, numberOfSoldiers: 50 },
+            { hasGeneral: true, hasDisease: false, numberOfSoldiers: 45 },
           ],
           environmentBonusElement: 'earthquake',
         }),
       ).toStrictEqual({
         army: {
           id: 2,
-          general: true,
-          disease: false,
+          hasGeneral: true,
+          hasDisease: false,
           numberOfSoldiers: 45,
         },
         environmentDisaster: 'earthquake',
