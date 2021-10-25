@@ -6,6 +6,8 @@ import {
 } from '@nestjs/common';
 import { Request, Response, NextFunction } from 'express';
 
+import { randomProbabilities } from 'src/constants';
+
 @Injectable()
 export class ArmyBonusMiddleware implements NestMiddleware {
   use(req: Request, res: Response, next: NextFunction) {
@@ -20,7 +22,7 @@ export class ArmyBonusMiddleware implements NestMiddleware {
 
     Object.values(req.query).forEach((numberOfSoldiers: string) => {
       req.body.armies.push({
-        ...(Math.random() < 0.7
+        ...(Math.random() < randomProbabilities.ARMY
           ? { general: true, disease: false }
           : { general: false, disease: true }),
         numberOfSoldiers: Number(numberOfSoldiers),
