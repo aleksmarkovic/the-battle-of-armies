@@ -13,7 +13,7 @@ describe('BattleService', () => {
   });
 
   describe('findAll', () => {
-    it('should return object', async () => {
+    it('should return array of armies', async () => {
       const result = [
         {
           id: 1,

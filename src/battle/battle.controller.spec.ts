@@ -15,7 +15,7 @@ describe('BattleController', () => {
   });
 
   describe('create', () => {
-    it('should return object', async () => {
+    it('should return winning army object', async () => {
       expect(
         await controller.create({
           armies: [
