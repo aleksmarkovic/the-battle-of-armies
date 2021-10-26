@@ -12,8 +12,6 @@ export class BattleController {
 
     const winner = this.battleService.initBattle();
 
-    this.battleService.reset();
-
     return winner;
   }
 }

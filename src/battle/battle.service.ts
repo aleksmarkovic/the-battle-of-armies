@@ -1,9 +1,9 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Scope } from '@nestjs/common';
 
 import { Army } from '../interfaces/army.interface';
 import battle from '../common/battle';
 
-@Injectable()
+@Injectable({ scope: Scope.REQUEST })
 export class BattleService {
   private armies: Army[] = [];
   private environmentDisaster: string;
@@ -31,10 +31,5 @@ export class BattleService {
 
   getEnvironmentDisaster(): string {
     return this.environmentDisaster;
-  }
-
-  reset() {
-    this.armies = [];
-    this.environmentDisaster = undefined;
   }
 }
