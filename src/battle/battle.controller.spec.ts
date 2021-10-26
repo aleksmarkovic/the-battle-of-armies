@@ -11,7 +11,7 @@ describe('BattleController', () => {
       providers: [BattleService],
     }).compile();
 
-    controller = module.get<BattleController>(BattleController);
+    controller = await module.resolve<BattleController>(BattleController);
   });
 
   describe('create', () => {

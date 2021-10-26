@@ -9,7 +9,7 @@ describe('BattleService', () => {
       providers: [BattleService],
     }).compile();
 
-    service = module.get<BattleService>(BattleService);
+    service = await module.resolve<BattleService>(BattleService);
   });
 
   describe('findAll', () => {
